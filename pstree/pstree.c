@@ -107,10 +107,11 @@ void parse_opts(int argc, char* argv[]) {
   char buf[MAX_ARG_LEN];
   int type = next_opt(argc, argv, buf);
   while (type != FINISHED) {
-    if (type == _UNKNOWN) continue;
-    opt_table[opt_num].type = type;
-    strncpy(opt_table[opt_num].value, buf, MAX_ARG_LEN);
-    opt_num++;
+    if (type != _UNKNOWN) {
+      opt_table[opt_num].type = type;
+      strncpy(opt_table[opt_num].value, buf, MAX_ARG_LEN);
+      opt_num++;
+    }
     type = next_opt(argc, argv, buf);
   }
   assert(!argv[argc]);
