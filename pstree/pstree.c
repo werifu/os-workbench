@@ -131,7 +131,7 @@ void test() {
   int argc = 5;
   char* argv[5] = {"a.out", "-p", "-V", "--numeric-sort", "-n"};
   char buf[MAX_ARG_LEN];
-  parse_opts();
+  parse_opts(argc, argv);
   assert(opt_num == 4);
   assert(opt_table[0].type == SHOW_PIDS);
 }
