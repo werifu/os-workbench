@@ -119,5 +119,6 @@ void test() {
   char* argv[5] = {"a.out", "-p", "-V", "--numeric-sort", "-n"};
   char buf[MAX_ARG_LEN];
   assert(next_opt(argc, argv, buf) == SHOW_PIDS);
+  assert(next_opt(argc, argv, buf) == VERSION);
 }
 #endif
