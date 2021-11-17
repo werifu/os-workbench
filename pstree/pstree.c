@@ -115,8 +115,8 @@ int main(int argc, char *argv[]) {
 
 #ifdef TEST
 void test() {
-  int argc = 4;
-  char* argv[5] = {"-p", "-V", "--numeric-sort", "-n"};
+  int argc = 5;
+  char* argv[5] = {"a.out", "-p", "-V", "--numeric-sort", "-n"};
   char buf[MAX_ARG_LEN];
   assert(next_opt(argc, argv, buf) == SHOW_PIDS);
 }
