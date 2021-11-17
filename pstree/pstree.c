@@ -120,7 +120,7 @@ int main(int argc, char *argv[]) {
   #ifdef TEST
   test();
   #endif
-  parse_opts();
+  parse_opts(argc, argv);
 
   return 0;
 }
