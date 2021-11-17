@@ -10,7 +10,7 @@
 #define MAX_ARG_NUM 20
 typedef int bool;
 
-#ifdef TEST
+#define TEST
 #ifdef TEST
 void test();
 
