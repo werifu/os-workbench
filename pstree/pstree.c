@@ -113,6 +113,7 @@ void parse_opts(int argc, char* argv[]) {
       opt_num++;
     }
     type = next_opt(argc, argv, buf);
+    assert(type != ERROR);
   }
   assert(!argv[argc]);
 }
