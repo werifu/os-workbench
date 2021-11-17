@@ -119,6 +119,7 @@ void parse_opts(int argc, char* argv[]) {
 int main(int argc, char *argv[]) {
   #ifdef TEST
   test();
+  return 0;
   #endif
   parse_opts(argc, argv);
 
