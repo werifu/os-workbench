@@ -27,7 +27,7 @@ int next_opt(int argc, char *argv[], const char* buf) {
     assert(argv[cur_arg]);
     printf("argv[%d] = %s\n", cur_arg, argv[cur_arg]);
     cur_arg++;
-    return TRUE;
+    return true;
   }
   return FINISHED;
 }
