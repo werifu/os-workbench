@@ -121,7 +121,7 @@ int main(int argc, char *argv[]) {
   test();
   return 0;
   #endif
-  parse_opts(argc, argv);
+  // parse_opts(argc, argv);
 
   return 0;
 }
