@@ -120,6 +120,8 @@ void parse_opts(int argc, char* argv[]) {
 int main(int argc, char *argv[]) {
   #ifdef TEST
   test();
+  printf("\033[0;31m");
+  printf("Test all pass.");
   return 0;
   #endif
   parse_opts(argc, argv);
