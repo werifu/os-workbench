@@ -58,7 +58,7 @@ int next_opt(int argc, char *argv[], const char* buf) {
       printf("-V OR --version detected\n");
       break;
     case _UNKNOWN:
-      printf("Unknown param detected\n");
+      printf("Unknown param '%s' detected\n", argv[cur_arg]);
       break;
     default:
       printf("You should have not see me...\n");
