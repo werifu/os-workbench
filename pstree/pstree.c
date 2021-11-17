@@ -3,14 +3,15 @@
 
 #define FINISHED -2
 #define ERROR -1
-#define true 1
-#define false 0
+#define TRUE 1
+#define FALSE 0
 
 enum Option {
   SHOW_PIDS,
   NUMERIC_SORT,
   VERSION,
 };
+
 
 
 /**
@@ -27,14 +28,16 @@ int next_opt(int argc, char *argv[], const char* buf) {
     assert(argv[cur_arg]);
     printf("argv[%d] = %s\n", cur_arg, argv[cur_arg]);
     cur_arg++;
-    return true;
+    return TRUE;
   }
   return FINISHED;
 }
+
 int main(int argc, char *argv[]) {
   char buf[200];
   int type = next_opt(argc, argv, buf);
   while (type != FINISHED) {
+    
     type = next_opt(argc, argv, buf);
   }
   assert(!argv[argc]);
