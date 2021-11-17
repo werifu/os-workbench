@@ -13,8 +13,9 @@ typedef int bool;
 #define TEST
 #ifdef TEST
 void test();
-
 #endif
+
+
 enum Option {
   SHOW_PIDS,
   NUMERIC_SORT,
@@ -96,10 +97,13 @@ int next_opt(int argc, char *argv[], char* buf) {
   return FINISHED;
 }
 
-int main(int argc, char *argv[]) {
-  #ifdef TEST
-  test();
-  #endif
+/**
+ * @brief parse all the opts and load values into array opt_table
+ * 
+ * @param argc 
+ * @param argv 
+ */
+void parse_opts(int argc, char* argv[]) {
   char buf[MAX_ARG_LEN];
   int type = next_opt(argc, argv, buf);
   while (type != FINISHED) {
@@ -110,15 +114,25 @@ int main(int argc, char *argv[]) {
     opt_num++;
   }
   assert(!argv[argc]);
+}
+
+int main(int argc, char *argv[]) {
+  #ifdef TEST
+  test();
+  #endif
+  parse_opts();
+
   return 0;
 }
+
 
 #ifdef TEST
 void test() {
   int argc = 5;
   char* argv[5] = {"a.out", "-p", "-V", "--numeric-sort", "-n"};
   char buf[MAX_ARG_LEN];
-  assert(next_opt(argc, argv, buf) == SHOW_PIDS);
-  assert(next_opt(argc, argv, buf) == VERSION);
+  parse_opts();
+  assert(opt_num == 4);
+  assert(opt_table[0].type == SHOW_PIDS);
 }
 #endif
