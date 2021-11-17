@@ -115,6 +115,7 @@ void parse_opts(int argc, char* argv[]) {
     type = next_opt(argc, argv, buf);
     assert(type != ERROR);
   }
+  printf("argc: %d\n", argc);
   assert(!argv[argc]);
 }
 
